@@ -458,7 +458,7 @@ namespace Unity.Collections
                 var bitflip = (Read64LE(secret+16) ^ Read64LE(secret+24)) + seed;
                 var keyed = input_64 ^ bitflip;
 
-                var low = Common.umul128(keyed, PRIME64_1 + (ulong)(len << 2), out var high);
+                var low = Unity.Burst.Intrinsics.Common.umul128(keyed, PRIME64_1 + (ulong)(len << 2), out var high);
 
                 high += (low << 1);
                 low ^= (high >> 3);
@@ -480,14 +480,14 @@ namespace Unity.Collections
                 var bitfliph = (Read64LE(secret+48) ^ Read64LE(secret+56)) + seed;
                 var input_lo = Read64LE(input);
                 var input_hi = Read64LE(input + len - 8);
-                var low = Common.umul128(input_lo ^ input_hi ^ bitflipl, PRIME64_1, out var high);
+                var low = Unity.Burst.Intrinsics.Common.umul128(input_lo ^ input_hi ^ bitflipl, PRIME64_1, out var high);
 
                 low += (ulong)(len - 1) << 54;
                 input_hi   ^= bitfliph;
                 high += input_hi + Mul32To64((uint)input_hi, PRIME32_2 - 1);
                 low  ^= Swap64(high);
 
-                var hlow = Common.umul128(low, PRIME64_2, out var hhigh);
+                var hlow = Unity.Burst.Intrinsics.Common.umul128(low, PRIME64_2, out var hhigh);
                 hhigh += high * PRIME64_2;
 
                 result = ToUint4(Avalanche(hlow), Avalanche(hhigh));
@@ -695,7 +695,7 @@ namespace Unity.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static ulong Mul128Fold64(ulong lhs, ulong rhs)
         {
-            var lo = Common.umul128(lhs, rhs, out var hi);
+            var lo = Unity.Burst.Intrinsics.Common.umul128(lhs, rhs, out var hi);
             return lo ^ hi;
         }
 
