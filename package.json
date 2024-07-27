@@ -27,5 +27,8 @@
     "url": "https://github.cds.internal.unity3d.com/unity/dots.git",
     "type": "git",
     "revision": "6ecf7a215623cca37079c6f1a3e6f2f686c91721"
+  },
+  "author": {
+    "name": "Unity"
   }
 }
