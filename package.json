@@ -11,6 +11,9 @@
     "com.unity.test-framework.performance": "3.0.3"
   },
   "description": "A C# collections library providing data structures that can be used in jobs, and optimized by Burst compiler.",
+  "author": {
+    "name": "Unity"
+  },
   "keywords": [
     "dots",
     "collections",
@@ -27,8 +30,5 @@
     "url": "https://github.cds.internal.unity3d.com/unity/dots.git",
     "type": "git",
     "revision": "6ad2e87dbaa61f6d4aa8fbd691c7c1c52c890560"
-  },
-  "author": {
-    "name": "Unity"
   }
 }
