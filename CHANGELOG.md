@@ -1,17 +1,48 @@
 # Changelog
 
+## [2.5.0-pre.2] - 2024-07-17
+
+### Changed
+
+* Updated Burst dependency to version 1.8.16
+
+
+## [2.5.0-exp.1] - 2024-06-11
+
+### Added
+
+* SortJobDefer type for scheduling sorting on NativeList when content of the list is not known ahead of time, and depends on dependent jobs.
+
+### Changed
+
+* Update entities package dependencies
+
+### Fixed
+
+* Clarified usage of "front" and "end" in API docs for `NativeQueue` and `UnsafeQueue`
+* Default constructed container can call IsCreated and IsEmpty properties.
+
+
+
+## [2.4.2] - 2024-05-30
+
+### Changed
+
+* Update entities package dependencies
+
+
 ## [2.4.1] - 2024-04-26
 
 ### Changed
+
 * Release preparation
 * Updated Burst dependency to version 1.8.13
 
 
-
-## [1.2.0] - 2024-03-22
+## [2.4.0] - 2024-03-22
 
 ### Changed
-* Release Preparation
+*Release Preparation
 
 
 ## [2.4.0-pre.5] - 2024-02-13
